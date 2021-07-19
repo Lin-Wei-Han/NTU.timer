@@ -114,7 +114,7 @@
                             }       
                             }, 50);
                         }
-                    }
+                        }
                 </script>
 
             <!-- 反方計時器 -->
@@ -188,6 +188,28 @@
                         function pause反二質() {
                             clearInterval(mytimer12);
                             control12 = 1;
+                        }
+                        function add(){
+                        clearInterval(mytimer12);
+                        control12 = 1;
+                        if (control12 == 1){
+                            var addtime12 = 0;
+                            setInterval(function() {
+                            if (addtime12 < 60) {
+                            sec12 += 1;
+                            addtime12++;
+                        if (sec12 > 59) {
+                        min12 += 1;
+                        sec12 = 0
+                        }
+                        if (sec12 < 10) {
+                            document.getElementById("demo12").innerHTML = min12 + ":0" + sec12 ;
+                        } 
+                        else
+                            document.getElementById("demo12").innerHTML = min12 + ":" + sec12 ;
+                            }       
+                            }, 50);
+                        }
                         }
                     </script>
                 </h1>
