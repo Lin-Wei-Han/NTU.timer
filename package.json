@@ -1,5 +1,5 @@
 {
-  "name": "NTU.timer",
+  "name": "ntutimer",
   "homepage": "https://tkudebate.github.io/NTU.timer",
   "version": "1.0.0",
   "description": "54321",
@@ -7,6 +7,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
