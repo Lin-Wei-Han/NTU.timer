@@ -36,6 +36,11 @@ button:active {
     margin-left: 200px;
     letter-spacing: 5px;
 }
+.innerthirty{
+    margin-top: -190px;
+    margin-left: 300px;
+    letter-spacing: 5px;
+}
 .inner2{
     margin-top: -160px;
     margin-left: 160px;
@@ -97,7 +102,7 @@ button:active {
     background-size: cover;
 }
 .s2{
-    background-image: url("images/bg1.png");
+    background-image: url("images/bg2.png");
     background-size: cover;
 }
 .s3{

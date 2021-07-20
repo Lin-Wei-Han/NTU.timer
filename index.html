@@ -15,8 +15,7 @@
     </style>
     </head>
 <body>
-    <audio id="bell1" src="audio/bell1.mp3"></audio>
-    <audio id="bell2" src="audio/bell2.mp3"></audio>
+    <audio id="up" src="audio/up.mp3"></audio>
     <div id="fullpage">
  <!-- page 1 -->
             <div class="section s1">
@@ -47,8 +46,7 @@
                     var min = 4;
                     var sec = 30;
                     var mytimer;
-                    var audio1 = document.getElementById("bell1");
-                    var audio2 = document.getElementById("bell2");
+                    var up = document.getElementById("up");
                     function start() {
                     if (control == 1) {
                         mytimer = setInterval(myTimer, 1000);
@@ -63,7 +61,6 @@
                             control = 1;
                             min = 4;
                             sec = 30;
-                            audio2.play()
                             document.getElementById("demo").innerHTML = "0:00";
                             return false;
                         }
@@ -76,9 +73,6 @@
                         } 
                         else
                             document.getElementById("demo").innerHTML = min + ":" + sec ;
-                        if (min ==0 && sec == 30){
-                        audio1.play() 
-                        }
                     }
                     function reset() {
                         clearInterval(mytimer);
@@ -98,6 +92,7 @@
                         control = 1;
                         if (control == 1){
                             var addtime = 0;
+                            up.play()
                             setInterval(function() {
                             if (addtime < 60) {
                             sec += 1;
@@ -112,7 +107,7 @@
                         else
                             document.getElementById("demo").innerHTML = min + ":" + sec ;
                             }       
-                            }, 50);
+                            }, 30);
                         }
                         }
                 </script>
@@ -145,8 +140,7 @@
                     var min12 = 4;
                     var sec12 = 30;
                     var mytimer12;
-                    var audio1 = document.getElementById("bell1");
-                    var audio2 = document.getElementById("bell2");
+                    var up = document.getElementById("up");
 
                     function start反二質() {
                         if (control12 == 1) {
@@ -161,7 +155,6 @@
                             control12 = 1;
                             min12 = 4;
                             sec12 = 30;
-                            audio2.play()
                             document.getElementById("demo12").innerHTML = "0:00";
                             return false;
                         }
@@ -174,9 +167,6 @@
                         } 
                         else
                             document.getElementById("demo12").innerHTML = min12 + ":" + sec12 ;
-                        if (min12 ==0 && sec12 == 30){
-                            audio1.play() 
-                            }
                         }
                         function reset反二質() {
                             clearInterval(mytimer12);
@@ -194,6 +184,7 @@
                         control12 = 1;
                         if (control12 == 1){
                             var addtime12 = 0;
+                            up.play()
                             setInterval(function() {
                             if (addtime12 < 60) {
                             sec12 += 1;
@@ -208,7 +199,7 @@
                         else
                             document.getElementById("demo12").innerHTML = min12 + ":" + sec12 ;
                             }       
-                            }, 50);
+                            }, 30);
                         }
                         }
                     </script>
@@ -219,13 +210,13 @@
                     <section id="main">
                         <div class="spare">
                             <head class="spare">
-                                <p style="font-size: 90px;">正方暫停</p>
+                                <p style="font-size: 90px;">強制計時</p>
                             </head>
                         </div>
-                        <div class="inner">
+                        <div class="innerthirty">
                             <section id="one" class="wrapper style1">
                                 <header class="special">
-                                    <p style="font-size: 170px;" id="demo111" >1:00</p>
+                                    <p style="font-size: 170px;" id="demo111" >30</p>
                                 </header>
                             </section>
                         </div>
@@ -237,8 +228,8 @@
                     </section>
                     <script>
                         var control111 = 1;
-                        var min111 = 1;
-                        var sec111 = 0;
+                        var min111 = 0;
+                        var sec111 = 30;
                         var mytimer111;
                         function start斷線() {
                         if (control111 == 1) {
@@ -251,10 +242,10 @@
                             sec111 -= 1;
                             if (min111 <= 0 && sec111 <= 0 ) {
                                 clearInterval(mytimer111);
-                                min111 = 1;
-                                sec111 = 0;
+                                min111 = 0;
+                                sec111 = 30;
                                 control111 = 1;
-                                document.getElementById("demo111").innerHTML = "0:00";
+                                document.getElementById("demo111").innerHTML = "00";
                                 return false;
                             }
                             if (sec111 < 0) {
@@ -262,16 +253,16 @@
                                 sec111 = 59
                             }
                             if (sec111 < 10) {
-                                document.getElementById("demo111").innerHTML = min111 + ":0" + sec111 ;
+                                document.getElementById("demo111").innerHTML = "0" + sec111 ;
                             } 
                             else
-                                document.getElementById("demo111").innerHTML = min111 + ":" + sec111 ;
+                                document.getElementById("demo111").innerHTML =  sec111 ;
                         }
                         function reset斷線() {
                             clearInterval(mytimer111);
-                            min111 = 1;
-                            sec111 = 00;
-                            document.getElementById("demo111").innerHTML = min111 + ":" + "0" + sec111 ;
+                            min111 = 0;
+                            sec111 = 30;
+                            document.getElementById("demo111").innerHTML = sec111 ;
                             control111 = 1;
                         }
     
@@ -286,7 +277,7 @@
                         <section id="main2">
                             <div class="spare2">
                                 <head class="spare2">
-                                    <p style="font-size: 90px;">反方暫停</p>
+                                    <p style="font-size: 90px;">比賽暫停</p>
                                 </head>
                             </div>
                             <div class="innerright">
@@ -347,6 +338,2281 @@
                             function pause裁判() {
                                 clearInterval(mytimer112);
                                 control112 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s2">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo21" >4:30</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start反一申()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause反一申()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset反一申()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add反一申()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control21 = 1;
+                    var min21 = 4;
+                    var sec21 = 30;
+                    var mytimer21;
+                    var up = document.getElementById("up");
+
+                    function start反一申() {
+                    if (control21 == 1) {
+                        mytimer21 = setInterval(myTimer21, 1000);
+                        control21--;
+                        }
+                    }
+
+                    function myTimer21() {
+                        sec21 -= 1;
+                        if (min21 <= 0 && sec21 <= 0){
+                            clearInterval(mytimer21);
+                            control21 = 1;
+                            min21 = 4;
+                            sec21 = 30;
+                            document.getElementById("demo21").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec21 < 0) {
+                            min21 -= 1;
+                            sec21 = 59
+                        }
+                        if (sec21 < 10) {
+                            document.getElementById("demo21").innerHTML = min21 + ":0" + sec21 ;
+                        } 
+                        else
+                            document.getElementById("demo21").innerHTML = min21 + ":" + sec21 ;
+                    }
+                    function reset反一申() {
+                        clearInterval(mytimer21);
+                        min21 = 4;
+                        sec21 = 30;
+                        document.getElementById("demo21").innerHTML = min21 + ":" + sec21 ;
+                        control21 = 1;
+                    }
+
+                    function pause反一申() {
+                        clearInterval(mytimer21);
+                        control21 = 1;
+                    }
+
+                    function add反一申(){
+                        clearInterval(mytimer21);
+                        control21 = 1;
+                        if (control21 == 1){
+                            var addtime21 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime21 < 60) {
+                            sec21 += 1;
+                            addtime21++;
+                        if (sec21 > 59) {
+                        min21 += 1;
+                        sec21 = 0
+                        }
+                        if (sec21 < 10) {
+                            document.getElementById("demo21").innerHTML = min21 + ":0" + sec21 ;
+                        } 
+                        else
+                            document.getElementById("demo21").innerHTML = min21 + ":" + sec21 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo22" >4:30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start正三質()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause正三質()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset正三質()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add正三質()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control22 = 1;
+                    var min22 = 4;
+                    var sec22 = 30;
+                    var mytimer22;
+                    var up = document.getElementById("up");
+
+                    function start正三質() {
+                        if (control22 == 1) {
+                            mytimer22 = setInterval(myTimer22, 1000);
+                            control22--;
+                        }
+                    }
+                    function myTimer22() {
+                        sec22 -= 1;
+                        if (min22 <= 0 && sec22 <= 0){
+                            clearInterval(mytimer22);
+                            control22 = 1;
+                            min22 = 4;
+                            sec22 = 30;
+                            document.getElementById("demo22").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec22 < 0) {
+                            min22 -= 1;
+                            sec22 = 59
+                        }
+                        if (sec22 < 10) {
+                            document.getElementById("demo22").innerHTML = min22 + ":0" + sec22 ;
+                        } 
+                        else
+                            document.getElementById("demo22").innerHTML = min22 + ":" + sec22 ;
+                        }
+                        function reset正三質() {
+                            clearInterval(mytimer22);
+                            min22 = 4;
+                            sec22 = 30;
+                            document.getElementById("demo22").innerHTML = min22 + ":" + sec22 ;
+                            control22 = 1;
+                        }
+                        function pause正三質() {
+                            clearInterval(mytimer22);
+                            control22 = 1;
+                        }
+                        function add正三質(){
+                        clearInterval(mytimer22);
+                        control22 = 1;
+                        if (control22 == 1){
+                            var addtime22 = 0;
+                            setInterval(function() {
+                            if (addtime22 < 60) {
+                            sec22 += 1;
+                            addtime22++;
+                            up.play() 
+                        if (sec22 > 59) {
+                        min22 += 1;
+                        sec22 = 0
+                        }
+                        if (sec22 < 10) {
+                            document.getElementById("demo22").innerHTML = min22 + ":0" + sec22 ;
+                        } 
+                        else
+                            document.getElementById("demo22").innerHTML = min22 + ":" + sec22 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo211" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線2()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線2()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線2()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control211 = 1;
+                        var min211 = 0;
+                        var sec211 = 30;
+                        var mytimer211;
+                        function start斷線2() {
+                        if (control211 == 1) {
+                            mytimer211 = setInterval(myTimer211, 1000);
+                            control211--;
+                        }
+                        }
+    
+                        function myTimer211() {
+                            sec211 -= 1;
+                            if (min211 <= 0 && sec211 <= 0 ) {
+                                clearInterval(mytimer211);
+                                min211 = 0;
+                                sec211 = 30;
+                                control211 = 1;
+                                document.getElementById("demo211").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec211 < 0) {
+                                min211 -= 1;
+                                sec211 = 59
+                            }
+                            if (sec211 < 10) {
+                                document.getElementById("demo211").innerHTML = "0" + sec211 ;
+                            } 
+                            else
+                                document.getElementById("demo211").innerHTML = sec211 ;
+                        }
+                        function reset斷線2() {
+                            clearInterval(mytimer211);
+                            min211 = 0;
+                            sec211 = 30;
+                            document.getElementById("demo211").innerHTML = sec211 ;
+                            control211 = 1;
+                        }
+    
+                        function pause斷線2() {
+                            clearInterval(mytimer211);
+                            control211 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo212" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判2()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判2()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判2()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control212 = 1;
+                        var min212 = 1;
+                        var sec212 = 0;
+                        var mytimer212;
+    
+                        function start裁判2() {
+                            if (control212 == 1) {
+                                mytimer212 = setInterval(myTimer212, 1000);
+                                control212--;
+                            }
+                        }
+                        function myTimer212() {
+                            sec212 -= 1;
+                            if (min212 <= 0 && sec212 <= 0 ) {
+                                clearInterval(mytimer212);
+                                min212 = 1;
+                                sec212 = 0;
+                                control212 = 1;
+                                document.getElementById("demo212").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec212 < 0) {
+                                min212 -= 1;
+                                sec212 = 59
+                            }
+
+                            if (sec212 < 10) {
+                                document.getElementById("demo212").innerHTML = min212 + ":0" + sec212 ;
+                            } 
+                            else
+                                document.getElementById("demo212").innerHTML = min212 + ":" + sec212 ;
+                        
+                            }
+                            function reset裁判2() {
+                                clearInterval(mytimer212);
+                                min212 = 1;
+                                sec212 = 0;
+                                document.getElementById("demo212").innerHTML = min212 + ":0" + sec212 ;
+                                control212 = 1;
+                            }
+                            function pause裁判2() {
+                                clearInterval(mytimer212);
+                                control212 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s3">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo31" >4:30</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start正二申()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause正二申()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset正二申()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add正二申()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control31 = 1;
+                    var min31 = 4;
+                    var sec31 = 30;
+                    var mytimer31;
+                    var up = document.getElementById("up");
+                    function start正二申() {
+                    if (control31 == 1) {
+                        mytimer31 = setInterval(myTimer31, 1000);
+                        control31--;
+                        }
+                    }
+
+                    function myTimer31() {
+                        sec31 -= 1;
+                        if (min31 <= 0 && sec31 <= 0){
+                            clearInterval(mytimer31);
+                            control31 = 1;
+                            min31 = 4;
+                            sec31 = 30;
+                            document.getElementById("demo31").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec31 < 0) {
+                            min31 -= 1;
+                            sec31 = 59
+                        }
+                        if (sec31 < 10) {
+                            document.getElementById("demo31").innerHTML = min31 + ":0" + sec31 ;
+                        } 
+                        else
+                            document.getElementById("demo31").innerHTML = min31 + ":" + sec31 ;
+                    }
+                    function reset正二申() {
+                        clearInterval(mytimer31);
+                        min31 = 4;
+                        sec31 = 30;
+                        document.getElementById("demo31").innerHTML = min31 + ":" + sec31 ;
+                        control31 = 1;
+                    }
+
+                    function pause正二申() {
+                        clearInterval(mytimer31);
+                        control31 = 1;
+                    }
+                    function add正二申(){
+                        clearInterval(mytimer31);
+                        control31 = 1;
+                        if (control31 == 1){
+                            var addtime31 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime31 < 60) {
+                            sec31 += 1;
+                            addtime31++;
+                        if (sec31 > 59) {
+                        min31 += 1;
+                        sec31 = 0
+                        }
+                        if (sec31 < 10) {
+                            document.getElementById("demo31").innerHTML = min31 + ":0" + sec31 ;
+                        } 
+                        else
+                            document.getElementById("demo31").innerHTML = min31 + ":" + sec31 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo32" >4:30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start反三質()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause反三質()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset反三質()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add反三質()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control32 = 1;
+                        var min32 = 4;
+                        var sec32 = 30;
+                        var mytimer32;
+                        var up = document.getElementById("up");
+    
+                        function start反三質() {
+                            if (control32 == 1) {
+                                mytimer32 = setInterval(myTimer32, 1000);
+                                control32--;
+                            }
+                        }
+                        function myTimer32() {
+                            sec32 -= 1;
+                            if (min32 <= 0 && sec32 <= 0){
+                                clearInterval(mytimer32);
+                                control32 = 1;
+                                min32 = 4;
+                                sec32 = 30;
+                                document.getElementById("demo32").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec32 < 0) {
+                                min32 -= 1;
+                                sec32 = 59
+                            }
+                            if (sec32 < 10) {
+                                document.getElementById("demo32").innerHTML = min32 + ":0" + sec32 ;
+                            } 
+                            else
+                                document.getElementById("demo32").innerHTML = min32 + ":" + sec32 ;
+                            }
+                            function reset反三質() {
+                                clearInterval(mytimer32);
+                                min32 = 4;
+                                sec32 = 30;
+                                document.getElementById("demo32").innerHTML = min32 + ":" + sec32 ;
+                                control32 = 1;
+                            }
+                            function pause反三質() {
+                                clearInterval(mytimer32);
+                                control32 = 1;
+                            }
+                            function add反三質(){
+                            clearInterval(mytimer32);
+                            control32 = 1;
+                            if (control32 == 1){
+                                var addtime32 = 0;
+                                up.play() 
+                                setInterval(function() {
+                                if (addtime32 < 60) {
+                                sec32 += 1;
+                                addtime32++;
+                            if (sec32 > 59) {
+                            min32 += 1;
+                            sec32 = 0
+                            }
+                            if (sec32 < 10) {
+                                document.getElementById("demo32").innerHTML = min32 + ":0" + sec32 ;
+                            } 
+                            else
+                                document.getElementById("demo32").innerHTML = min32 + ":" + sec32 ;
+                                }       
+                                }, 30);
+                            }
+                            }
+                        </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo311" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線3()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線3()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線3()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control311 = 1;
+                        var min311 = 0;
+                        var sec311 = 30;
+                        var mytimer211;
+                        function start斷線3() {
+                        if (control311 == 1) {
+                            mytimer311 = setInterval(myTimer311, 1000);
+                            control311--;
+                        }
+                        }
+    
+                        function myTimer311() {
+                            sec311 -= 1;
+                            if (min311 <= 0 && sec311 <= 0 ) {
+                                clearInterval(mytimer311);
+                                min311 = 0;
+                                sec311 = 30;
+                                control311 = 1;
+                                document.getElementById("demo311").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec311 < 0) {
+                                min311 -= 1;
+                                sec311 = 59
+                            }
+                            if (sec311 < 10) {
+                                document.getElementById("demo311").innerHTML = "0" + sec311 ;
+                            } 
+                            else
+                                document.getElementById("demo311").innerHTML = sec311 ;
+                        }
+                        function reset斷線3() {
+                            clearInterval(mytimer311);
+                            min311 = 0;
+                            sec311 = 30;
+                            document.getElementById("demo311").innerHTML = sec311 ;
+                            control311 = 1;
+                        }
+    
+                        function pause斷線3() {
+                            clearInterval(mytimer311);
+                            control311 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo312" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判3()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判3()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判3()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control312 = 1;
+                        var min312 = 1;
+                        var sec312 = 0;
+                        var mytimer312;
+    
+                        function start裁判3() {
+                            if (control312 == 1) {
+                                mytimer312 = setInterval(myTimer312, 1000);
+                                control312--;
+                            }
+                        }
+                        function myTimer312() {
+                            sec312 -= 1;
+                            if (min312 <= 0 && sec312 <= 0 ) {
+                                clearInterval(mytimer312);
+                                min312 = 1;
+                                sec312 = 0;
+                                control312 = 1;
+                                document.getElementById("demo312").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec312 < 0) {
+                                min312 -= 1;
+                                sec312 = 59
+                            }
+
+                            if (sec312 < 10) {
+                                document.getElementById("demo312").innerHTML = min312 + ":0" + sec312 ;
+                            } 
+                            else
+                                document.getElementById("demo312").innerHTML = min312 + ":" + sec312 ;
+                        
+                            }
+                            function reset裁判3() {
+                                clearInterval(mytimer312);
+                                min312 = 1;
+                                sec312 = 0;
+                                document.getElementById("demo312").innerHTML = min312 + ":0" + sec312 ;
+                                control312 = 1;
+                            }
+                            function pause裁判3() {
+                                clearInterval(mytimer312);
+                                control312 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s4">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo41" >4:30</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start反二申()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause反二申()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset反二申()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add反二申()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control41 = 1;
+                    var min41 = 4;
+                    var sec41 = 30;
+                    var mytimer41;
+                    var up = document.getElementById("up");
+                    function start反二申() {
+                    if (control41 == 1) {
+                        mytimer41 = setInterval(myTimer41, 1000);
+                        control41--;
+                        }
+                    }
+
+                    function myTimer41() {
+                        sec41 -= 1;
+                        if (min41 <= 0 && sec41 <= 0){
+                            clearInterval(mytimer41);
+                            control41 = 1;
+                            min41 = 4;
+                            sec41 = 30;
+                            document.getElementById("demo41").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec41 < 0) {
+                            min41 -= 1;
+                            sec41 = 59
+                        }
+                        if (sec41 < 10) {
+                            document.getElementById("demo41").innerHTML = min41 + ":0" + sec41 ;
+                        } 
+                        else
+                            document.getElementById("demo41").innerHTML = min41 + ":" + sec41 ;
+                    }
+                    function reset反二申() {
+                        clearInterval(mytimer41);
+                        min41 = 4;
+                        sec41 = 30;
+                        document.getElementById("demo41").innerHTML = min41 + ":" + sec41 ;
+                        control41 = 1;
+                    }
+
+                    function pause反二申() {
+                        clearInterval(mytimer41);
+                        control41 = 1;
+                    }
+
+                    function add反二申(){
+                        clearInterval(mytimer41);
+                        control41 = 1;
+                        if (control41 == 1){
+                            var addtime41 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime41 < 60) {
+                            sec41 += 1;
+                            addtime41++;
+                        if (sec41 > 59) {
+                        min41 += 1;
+                        sec41 = 0
+                        }
+                        if (sec41 < 10) {
+                            document.getElementById("demo41").innerHTML = min41 + ":0" + sec41 ;
+                        } 
+                        else
+                            document.getElementById("demo41").innerHTML = min41 + ":" + sec41 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo42" >4:30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start正一質()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause正一質()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset正一質()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add正一質()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control42 = 1;
+                    var min42 = 4;
+                    var sec42 = 30;
+                    var mytimer42;
+                    var up = document.getElementById("up");
+
+                    function start正一質() {
+                        if (control42 == 1) {
+                            mytimer42 = setInterval(myTimer42, 1000);
+                            control42--;
+                        }
+                    }
+                    function myTimer42() {
+                        sec42 -= 1;
+                        if (min42 <= 0 && sec42 <= 0){
+                            clearInterval(mytimer42);
+                            control42 = 1;
+                            min42 = 4;
+                            sec42 = 30;
+                            document.getElementById("demo42").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec42 < 0) {
+                            min42 -= 1;
+                            sec42 = 59
+                        }
+                        if (sec42 < 10) {
+                            document.getElementById("demo42").innerHTML = min42 + ":0" + sec42 ;
+                        } 
+                        else
+                            document.getElementById("demo42").innerHTML = min42 + ":" + sec42 ;
+                        }
+                        function reset正一質() {
+                            clearInterval(mytimer42);
+                            min42 = 4;
+                            sec42 = 30;
+                            document.getElementById("demo42").innerHTML = min42 + ":" + sec42 ;
+                            control42 = 1;
+                        }
+                        function pause正一質() {
+                            clearInterval(mytimer42);
+                            control42 = 1;
+                        }
+                        function add正一質(){
+                        clearInterval(mytimer42);
+                        control42 = 1;
+                        if (control42 == 1){
+                            var addtime42 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime42 < 60) {
+                            sec42 += 1;
+                            addtime42++;
+                        if (sec42 > 59) {
+                        min42 += 1;
+                        sec42 = 0
+                        }
+                        if (sec42 < 10) {
+                            document.getElementById("demo42").innerHTML = min42 + ":0" + sec42 ;
+                        } 
+                        else
+                            document.getElementById("demo42").innerHTML = min42 + ":" + sec42 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo411" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線4()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線4()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線4()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control411 = 1;
+                        var min411 = 0;
+                        var sec411 = 30;
+                        var mytimer411;
+                        function start斷線4() {
+                        if (control411 == 1) {
+                            mytimer411 = setInterval(myTimer411, 1000);
+                            control411--;
+                        }
+                        }
+    
+                        function myTimer411() {
+                            sec411 -= 1;
+                            if (min411 <= 0 && sec411 <= 0 ) {
+                                clearInterval(mytimer411);
+                                min411 = 0;
+                                sec411 = 30;
+                                control411 = 1;
+                                document.getElementById("demo411").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec411 < 0) {
+                                min411 -= 1;
+                                sec411 = 59
+                            }
+                            if (sec411 < 10) {
+                                document.getElementById("demo411").innerHTML = "0" + sec411 ;
+                            } 
+                            else
+                                document.getElementById("demo411").innerHTML = sec411 ;
+                        }
+                        function reset斷線4() {
+                            clearInterval(mytimer411);
+                            min411 = 0;
+                            sec411 = 30;
+                            document.getElementById("demo411").innerHTML = sec411 ;
+                            control411 = 1;
+                        }
+    
+                        function pause斷線4() {
+                            clearInterval(mytimer411);
+                            control411 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo412" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判4()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判4()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判4()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control412 = 1;
+                        var min412 = 1;
+                        var sec412 = 0;
+                        var mytimer412;
+    
+                        function start裁判4() {
+                            if (control412 == 1) {
+                                mytimer412 = setInterval(myTimer412, 1000);
+                                control412--;
+                            }
+                        }
+                        function myTimer412() {
+                            sec412 -= 1;
+                            if (min412 <= 0 && sec412 <= 0 ) {
+                                clearInterval(mytimer412);
+                                min412 = 1;
+                                sec412 = 0;
+                                control412 = 1;
+                                document.getElementById("demo412").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec412 < 0) {
+                                min412 -= 1;
+                                sec412 = 59
+                            }
+
+                            if (sec412 < 10) {
+                                document.getElementById("demo412").innerHTML = min412 + ":0" + sec412 ;
+                            } 
+                            else
+                                document.getElementById("demo412").innerHTML = min412 + ":" + sec412 ;
+                        
+                            }
+                            function reset裁判4() {
+                                clearInterval(mytimer412);
+                                min412 = 1;
+                                sec412 = 0;
+                                document.getElementById("demo412").innerHTML = min412 + ":0" + sec412 ;
+                                control412 = 1;
+                            }
+                            function pause裁判4() {
+                                clearInterval(mytimer412);
+                                control412 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s5">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo51" >4:30</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start正三申()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause正三申()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset正三申()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add正三申()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control51 = 1;
+                    var min51 = 4;
+                    var sec51 = 30;
+                    var mytimer51;
+                    var up = document.getElementById("up");
+                    function start正三申() {
+                    if (control51 == 1) {
+                        mytimer51 = setInterval(myTimer51, 1000);
+                        control51--;
+                        }
+                    }
+
+                    function myTimer51() {
+                        sec51 -= 1;
+                        if (min51 <= 0 && sec51 <= 0){
+                            clearInterval(mytimer51);
+                            control51 = 1;
+                            min51 = 4;
+                            sec51 = 30;
+                            document.getElementById("demo51").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec51 < 0) {
+                            min51 -= 1;
+                            sec51 = 59
+                        }
+                        if (sec51 < 10) {
+                            document.getElementById("demo51").innerHTML = min51 + ":0" + sec51 ;
+                        } 
+                        else
+                            document.getElementById("demo51").innerHTML = min51 + ":" + sec51 ;
+                    }
+                    function reset正三申() {
+                        clearInterval(mytimer51);
+                        min51 = 4;
+                        sec51 = 30;
+                        document.getElementById("demo51").innerHTML = min51 + ":" + sec51 ;
+                        control51 = 1;
+                    }
+
+                    function pause正三申() {
+                        clearInterval(mytimer51);
+                        control51 = 1;
+                    }
+
+                    function add正三申(){
+                        clearInterval(mytimer51);
+                        control51 = 1;
+                        if (control51 == 1){
+                            var addtime51 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime51 < 60) {
+                            sec51 += 1;
+                            addtime51++;
+                        if (sec51 > 59) {
+                        min51 += 1;
+                        sec51 = 0
+                        }
+                        if (sec51 < 10) {
+                            document.getElementById("demo51").innerHTML = min51 + ":0" + sec51 ;
+                        } 
+                        else
+                            document.getElementById("demo51").innerHTML = min51 + ":" + sec51 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo52" >4:30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start反一質()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause反一質()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset反一質()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add反一質()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control52 = 1;
+                    var min52 = 4;
+                    var sec52 = 30;
+                    var mytimer52;
+                    var up = document.getElementById("up");
+
+                    function start反一質() {
+                        if (control52 == 1) {
+                            mytimer52 = setInterval(myTimer52, 1000);
+                            control52--;
+                        }
+                    }
+                    function myTimer52() {
+                        sec52 -= 1;
+                        if (min52 <= 0 && sec52 <= 0){
+                            clearInterval(mytimer52);
+                            control52 = 1;
+                            min52 = 4;
+                            sec52 = 30;
+                            document.getElementById("demo52").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec52 < 0) {
+                            min52 -= 1;
+                            sec52 = 59
+                        }
+                        if (sec52 < 10) {
+                            document.getElementById("demo52").innerHTML = min52 + ":0" + sec52 ;
+                        } 
+                        else
+                            document.getElementById("demo52").innerHTML = min52 + ":" + sec52 ;
+                        }
+                        function reset反一質() {
+                            clearInterval(mytimer52);
+                            min52 = 4;
+                            sec52 = 30;
+                            document.getElementById("demo52").innerHTML = min52 + ":" + sec52 ;
+                            control52 = 1;
+                        }
+                        function pause反一質() {
+                            clearInterval(mytimer52);
+                            control52 = 1;
+                        }
+                        function add反一質(){
+                        clearInterval(mytimer52);
+                        control52 = 1;
+                        if (control52 == 1){
+                            var addtime52 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime52 < 60) {
+                            sec52 += 1;
+                            addtime52++;
+                        if (sec52 > 59) {
+                        min52 += 1;
+                        sec52 = 0
+                        }
+                        if (sec52 < 10) {
+                            document.getElementById("demo52").innerHTML = min52 + ":0" + sec52 ;
+                        } 
+                        else
+                            document.getElementById("demo52").innerHTML = min52 + ":" + sec52 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo511" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線5()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線5()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線5()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control511 = 1;
+                        var min511 = 0;
+                        var sec511 = 30;
+                        var mytimer411;
+                        function start斷線5() {
+                        if (control511 == 1) {
+                            mytimer511 = setInterval(myTimer511, 1000);
+                            control511--;
+                        }
+                        }
+    
+                        function myTimer511() {
+                            sec511 -= 1;
+                            if (min511 <= 0 && sec511 <= 0 ) {
+                                clearInterval(mytimer511);
+                                min511 = 0;
+                                sec511 = 30;
+                                control511 = 1;
+                                document.getElementById("demo511").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec511 < 0) {
+                                min511 -= 1;
+                                sec511 = 59
+                            }
+                            if (sec511 < 10) {
+                                document.getElementById("demo511").innerHTML = "0" + sec511 ;
+                            } 
+                            else
+                                document.getElementById("demo511").innerHTML = sec511 ;
+                        }
+                        function reset斷線5() {
+                            clearInterval(mytimer511);
+                            min511 = 0;
+                            sec511 = 30;
+                            document.getElementById("demo511").innerHTML = sec511 ;
+                            control511 = 1;
+                        }
+    
+                        function pause斷線5() {
+                            clearInterval(mytimer511);
+                            control511 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo512" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判5()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判5()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判5()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control512 = 1;
+                        var min512 = 1;
+                        var sec512 = 0;
+                        var mytimer512;
+    
+                        function start裁判5() {
+                            if (control512 == 1) {
+                                mytimer512 = setInterval(myTimer512, 1000);
+                                control512--;
+                            }
+                        }
+                        function myTimer512() {
+                            sec512 -= 1;
+                            if (min512 <= 0 && sec512 <= 0 ) {
+                                clearInterval(mytimer512);
+                                min512 = 1;
+                                sec512 = 0;
+                                control512 = 1;
+                                document.getElementById("demo512").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec512 < 0) {
+                                min512 -= 1;
+                                sec512 = 59
+                            }
+
+                            if (sec512 < 10) {
+                                document.getElementById("demo512").innerHTML = min512 + ":0" + sec512 ;
+                            } 
+                            else
+                                document.getElementById("demo512").innerHTML = min512 + ":" + sec512 ;
+                        
+                            }
+                            function reset裁判5() {
+                                clearInterval(mytimer512);
+                                min512 = 1;
+                                sec512 = 0;
+                                document.getElementById("demo512").innerHTML = min512 + ":0" + sec512 ;
+                                control512 = 1;
+                            }
+                            function pause裁判5() {
+                                clearInterval(mytimer512);
+                                control512 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s6">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo61" >4:30</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start反三申()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause反三申()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset反三申()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add反三申()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control61 = 1;
+                    var min61 = 4;
+                    var sec61 = 30;
+                    var mytimer61;
+                    var up = document.getElementById("up");
+                    function start反三申() {
+                    if (control61 == 1) {
+                        mytimer61 = setInterval(myTimer61, 1000);
+                        control61--;
+                        }
+                    }
+
+                    function myTimer61() {
+                        sec61 -= 1;
+                        if (min61 <= 0 && sec61 <= 0){
+                            clearInterval(mytimer61);
+                            control61 = 1;
+                            min61 = 4;
+                            sec61 = 30;
+                            document.getElementById("demo61").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec61 < 0) {
+                            min61 -= 1;
+                            sec61 = 59
+                        }
+                        if (sec61 < 10) {
+                            document.getElementById("demo61").innerHTML = min61 + ":0" + sec61 ;
+                        } 
+                        else
+                            document.getElementById("demo61").innerHTML = min61 + ":" + sec61 ;
+                    }
+                    function reset反三申() {
+                        clearInterval(mytimer61);
+                        min61 = 4;
+                        sec61 = 30;
+                        document.getElementById("demo61").innerHTML = min61 + ":" + sec61 ;
+                        control61 = 1;
+                    }
+
+                    function pause反三申() {
+                        clearInterval(mytimer61);
+                        control61 = 1;
+                    }
+
+                    function add反三申(){
+                        clearInterval(mytimer61);
+                        control61 = 1;
+                        if (control61 == 1){
+                            var addtime61 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime61 < 60) {
+                            sec61 += 1;
+                            addtime61++;
+                        if (sec61 > 59) {
+                        min61 += 1;
+                        sec61 = 0
+                        }
+                        if (sec61 < 10) {
+                            document.getElementById("demo61").innerHTML = min61 + ":0" + sec61 ;
+                        } 
+                        else
+                            document.getElementById("demo61").innerHTML = min61 + ":" + sec61 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo62" >4:30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start正二質()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause正二質()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset正二質()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add正二質()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control62 = 1;
+                    var min62 = 4;
+                    var sec62 = 30;
+                    var mytimer62;
+                    var up = document.getElementById("up");
+
+                    function start正二質() {
+                        if (control62 == 1) {
+                            mytimer62 = setInterval(myTimer62, 1000);
+                            control62--;
+                        }
+                    }
+                    function myTimer62() {
+                        sec62 -= 1;
+                        if (min62 <= 0 && sec62 <= 0){
+                            clearInterval(mytimer62);
+                            control62 = 1;
+                            min62 = 4;
+                            sec62 = 30;
+                            document.getElementById("demo62").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec62 < 0) {
+                            min62 -= 1;
+                            sec62 = 59
+                        }
+                        if (sec62 < 10) {
+                            document.getElementById("demo62").innerHTML = min62 + ":0" + sec62 ;
+                        } 
+                        else
+                            document.getElementById("demo62").innerHTML = min62 + ":" + sec62 ;
+                        }
+                        function reset正二質() {
+                            clearInterval(mytimer62);
+                            min62 = 4;
+                            sec62 = 30;
+                            document.getElementById("demo62").innerHTML = min62 + ":" + sec62 ;
+                            control62 = 1;
+                        }
+                        function pause正二質() {
+                            clearInterval(mytimer62);
+                            control62 = 1;
+                        }
+                        function add正二質(){
+                        clearInterval(mytimer62);
+                        control62 = 1;
+                        if (control62 == 1){
+                            var addtime62 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime62 < 60) {
+                            sec62 += 1;
+                            addtime62++;
+                        if (sec62 > 59) {
+                        min62 += 1;
+                        sec62 = 0
+                        }
+                        if (sec62 < 10) {
+                            document.getElementById("demo62").innerHTML = min62 + ":0" + sec62 ;
+                        } 
+                        else
+                            document.getElementById("demo62").innerHTML = min62 + ":" + sec62 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo611" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線6()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線6()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線6()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control611 = 1;
+                        var min611 = 0;
+                        var sec611 = 30;
+                        var mytimer611;
+                        function start斷線6() {
+                        if (control611 == 1) {
+                            mytimer611 = setInterval(myTimer611, 1000);
+                            control611--;
+                        }
+                        }
+    
+                        function myTimer611() {
+                            sec611 -= 1;
+                            if (min611 <= 0 && sec611 <= 0 ) {
+                                clearInterval(mytimer611);
+                                min611 = 0;
+                                sec611 = 30;
+                                control611 = 1;
+                                document.getElementById("demo611").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec611 < 0) {
+                                min611 -= 1;
+                                sec611 = 59
+                            }
+                            if (sec611 < 10) {
+                                document.getElementById("demo611").innerHTML = "0" + sec611 ;
+                            } 
+                            else
+                                document.getElementById("demo611").innerHTML = sec611 ;
+                        }
+                        function reset斷線6() {
+                            clearInterval(mytimer611);
+                            min611 = 0;
+                            sec611 = 30;
+                            document.getElementById("demo611").innerHTML = sec611 ;
+                            control611 = 1;
+                        }
+    
+                        function pause斷線6() {
+                            clearInterval(mytimer611);
+                            control611 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo612" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判6()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判6()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判6()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control612 = 1;
+                        var min612 = 1;
+                        var sec612 = 0;
+                        var mytimer612;
+    
+                        function start裁判6() {
+                            if (control612 == 1) {
+                                mytimer612 = setInterval(myTimer612, 1000);
+                                control612--;
+                            }
+                        }
+                        function myTimer612() {
+                            sec612 -= 1;
+                            if (min612 <= 0 && sec612 <= 0 ) {
+                                clearInterval(mytimer612);
+                                min612 = 1;
+                                sec612 = 0;
+                                control612 = 1;
+                                document.getElementById("demo612").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec612 < 0) {
+                                min612 -= 1;
+                                sec612 = 59
+                            }
+
+                            if (sec612 < 10) {
+                                document.getElementById("demo612").innerHTML = min612 + ":0" + sec612 ;
+                            } 
+                            else
+                                document.getElementById("demo612").innerHTML = min612 + ":" + sec612 ;
+                        
+                            }
+                            function reset裁判6() {
+                                clearInterval(mytimer612);
+                                min612 = 1;
+                                sec612 = 0;
+                                document.getElementById("demo612").innerHTML = min612 + ":0" + sec612 ;
+                                control612 = 1;
+                            }
+                            function pause裁判6() {
+                                clearInterval(mytimer612);
+                                control612 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s7">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo71" >5:00</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start檢證()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause檢證()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset檢證()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add檢證()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control71 = 1;
+                    var min71 = 5;
+                    var sec71 = 00;
+                    var mytimer71;
+                    var up = document.getElementById("up");
+                    function start檢證() {
+                    if (control71 == 1) {
+                        mytimer71 = setInterval(myTimer71, 1000);
+                        control71--;
+                        }
+                    }
+
+                    function myTimer71() {
+                        sec71 -= 1;
+                        if (min71 <= 0 && sec71 <= 0){
+                            clearInterval(mytimer71);
+                            control71 = 1;
+                            min71 = 5;
+                            sec71 = 0;
+                            document.getElementById("demo71").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec71 < 0) {
+                            min71 -= 1;
+                            sec71 = 59
+                        }
+                        if (sec71 < 10) {
+                            document.getElementById("demo71").innerHTML = min71 + ":0" + sec71 ;
+                        } 
+                        else
+                            document.getElementById("demo71").innerHTML = min71 + ":" + sec71 ;
+                    }
+                    function reset檢證() {
+                        clearInterval(mytimer71);
+                        min71 = 5;
+                        sec71 = 0;
+                        document.getElementById("demo71").innerHTML = min71 + ":0" + sec71 ;
+                        control71 = 1;
+                    }
+
+                    function pause檢證() {
+                        clearInterval(mytimer71);
+                        control71 = 1;
+                    }
+
+                    function add檢證(){
+                        clearInterval(mytimer71);
+                        control71 = 1;
+                        if (control71 == 1){
+                            var addtime71 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime71 < 60) {
+                            sec71 += 1;
+                            addtime71++;
+                        if (sec71 > 59) {
+                        min71 += 1;
+                        sec71 = 0
+                        }
+                        if (sec71 < 10) {
+                            document.getElementById("demo71").innerHTML = min71 + ":0" + sec71 ;
+                        } 
+                        else
+                            document.getElementById("demo71").innerHTML = min71 + ":" + sec71 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo72" >5:00</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start檢證2()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause檢證2()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset檢證2()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add檢證2()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control72 = 1;
+                    var min72 = 5;
+                    var sec72 = 00;
+                    var mytimer72;
+                    var up = document.getElementById("up");
+
+                    function start檢證2() {
+                        if (control72 == 1) {
+                            mytimer72 = setInterval(myTimer72, 1000);
+                            control72--;
+                        }
+                    }
+                    function myTimer72() {
+                        sec72 -= 1;
+                        if (min72 <= 0 && sec72 <= 0){
+                            clearInterval(mytimer72);
+                            control72 = 1;
+                            min72 = 5;
+                            sec72 = 00;
+                            document.getElementById("demo72").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec72 < 0) {
+                            min72 -= 1;
+                            sec72 = 59
+                        }
+                        if (sec72 < 10) {
+                            document.getElementById("demo72").innerHTML = min72 + ":0" + sec72 ;
+                        } 
+                        else
+                            document.getElementById("demo72").innerHTML = min72 + ":" + sec72 ;
+                        }
+                        function reset檢證2() {
+                            clearInterval(mytimer72);
+                            min72 = 5;
+                            sec72 = 0;
+                            document.getElementById("demo72").innerHTML = min72 + ":0" + sec72 ;
+                            control72 = 1;
+                        }
+                        function pause檢證2() {
+                            clearInterval(mytimer72);
+                            control72 = 1;
+                        }
+                        function add檢證2(){
+                        clearInterval(mytimer72);
+                        control72 = 1;
+                        if (control72 == 1){
+                            var addtime72 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime72 < 60) {
+                            sec72 += 1;
+                            addtime72++;
+                        if (sec72 > 59) {
+                        min72 += 1;
+                        sec72 = 0
+                        }
+                        if (sec72 < 10) {
+                            document.getElementById("demo72").innerHTML = min72 + ":0" + sec72 ;
+                        } 
+                        else
+                            document.getElementById("demo72").innerHTML = min72 + ":" + sec72 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo711" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線7()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線7()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線7()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control711 = 1;
+                        var min711 = 0;
+                        var sec711 = 30;
+                        var mytimer711;
+                        function start斷線7() {
+                        if (control711 == 1) {
+                            mytimer711 = setInterval(myTimer711, 1000);
+                            control711--;
+                        }
+                        }
+    
+                        function myTimer711() {
+                            sec711 -= 1;
+                            if (min711 <= 0 && sec711 <= 0 ) {
+                                clearInterval(mytimer711);
+                                min711 = 0;
+                                sec711 = 30;
+                                control711 = 1;
+                                document.getElementById("demo711").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec711 < 0) {
+                                min711 -= 1;
+                                sec711 = 59
+                            }
+                            if (sec711 < 10) {
+                                document.getElementById("demo711").innerHTML = "0" + sec711 ;
+                            } 
+                            else
+                                document.getElementById("demo711").innerHTML = sec711 ;
+                        }
+                        function reset斷線7() {
+                            clearInterval(mytimer711);
+                            min711 = 0;
+                            sec711 = 30;
+                            document.getElementById("demo711").innerHTML = sec711 ;
+                            control711 = 1;
+                        }
+    
+                        function pause斷線7() {
+                            clearInterval(mytimer711);
+                            control711 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo712" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判7()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判7()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判7()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control712 = 1;
+                        var min712 = 1;
+                        var sec712 = 0;
+                        var mytimer712;
+    
+                        function start裁判7() {
+                            if (control712 == 1) {
+                                mytimer712 = setInterval(myTimer712, 1000);
+                                control712--;
+                            }
+                        }
+                        function myTimer712() {
+                            sec712 -= 1;
+                            if (min712 <= 0 && sec712 <= 0 ) {
+                                clearInterval(mytimer712);
+                                min712 = 1;
+                                sec712 = 0;
+                                control712 = 1;
+                                document.getElementById("demo712").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec712 < 0) {
+                                min712 -= 1;
+                                sec712 = 59
+                            }
+
+                            if (sec712 < 10) {
+                                document.getElementById("demo712").innerHTML = min712 + ":0" + sec712 ;
+                            } 
+                            else
+                                document.getElementById("demo712").innerHTML = min712 + ":" + sec712 ;
+                        
+                            }
+                            function reset裁判7() {
+                                clearInterval(mytimer712);
+                                min712 = 1;
+                                sec712 = 0;
+                                document.getElementById("demo712").innerHTML = min712 + ":0" + sec712 ;
+                                control712 = 1;
+                            }
+                            function pause裁判7() {
+                                clearInterval(mytimer712);
+                                control712 = 1;
+                            }
+                        </script>
+                    </h1>
+                </div>
+            </div>
+            <div class="section s8">
+                <div class="slide">
+                <h1>
+                <section id="main">
+                    <div class="left">
+                        <head class="left">
+                            <p style="font-size: 90px;">正方</p>
+                        </head>
+                    </div>
+                    <div class="inner">
+                        <section id="one" class="wrapper style1">
+                            <header class="special">
+                                <p style="font-size: 170px;" id="demo81" >3:00</p>
+                            </header>
+                        </section>
+                    </div>
+                    <div class="inner2">
+                        <button onclick="start正方結()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                        <button onclick="pause正方結()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                        <button onclick="reset正方結()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>&emsp;
+                        <button onclick="add正方結()"><img src="images/1m.png"width="60px" margin-left="250px;"></button>
+                    </div>
+                </section>
+                <script>
+                    var control81 = 1;
+                    var min81 = 3;
+                    var sec81 = 00;
+                    var mytimer81;
+                    var up = document.getElementById("up");
+                    function start正方結() {
+                    if (control81 == 1) {
+                        mytimer81 = setInterval(myTimer81, 1000);
+                        control81--;
+                        }
+                    }
+
+                    function myTimer81() {
+                        sec81 -= 1;
+                        if (min81 <= 0 && sec81 <= 0){
+                            clearInterval(mytimer81);
+                            control81 = 1;
+                            min81 = 3;
+                            sec81 = 0;
+                            document.getElementById("demo81").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec81 < 0) {
+                            min81 -= 1;
+                            sec81 = 59
+                        }
+                        if (sec81 < 10) {
+                            document.getElementById("demo81").innerHTML = min81 + ":0" + sec81 ;
+                        } 
+                        else
+                            document.getElementById("demo81").innerHTML = min81 + ":" + sec81 ;
+                    }
+                    function reset正方結() {
+                        clearInterval(mytimer81);
+                        min81 = 3;
+                        sec81 = 0;
+                        document.getElementById("demo81").innerHTML = min81 + ":0" + sec81 ;
+                        control81 = 1;
+                    }
+
+                    function pause正方結() {
+                        clearInterval(mytimer81);
+                        control81 = 1;
+                    }
+
+                    function add正方結(){
+                        clearInterval(mytimer81);
+                        control81 = 1;
+                        if (control81 == 1){
+                            var addtime81 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime81 < 60) {
+                            sec81 += 1;
+                            addtime81++;
+                        if (sec81 > 59) {
+                        min81 += 1;
+                        sec81 = 0
+                        }
+                        if (sec81 < 10) {
+                            document.getElementById("demo81").innerHTML = min81 + ":0" + sec81 ;
+                        } 
+                        else
+                            document.getElementById("demo81").innerHTML = min81 + ":" + sec81 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                </script>
+
+            <!-- 反方計時器 -->
+                    <!-- Main -->
+                    <section id="main2">
+                        <div class="left2">
+                            <head class="left2">
+                                <p style="font-size: 90px;">反方</p>
+                            </head>
+                        </div>
+                        <div class="innerright">
+                            <!-- One -->
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo82" >3:00</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner2right">
+                            <button onclick="start反方結()"><img src="images/play.png"width="60px" ></button>&emsp;
+                            <button onclick="pause反方結()"><img src="images/pause.png"width="60px"></button>&emsp;
+                            <button onclick="reset反方結()"><img src="images/restart.png"width="60px"></button>&emsp;
+                            <button onclick="add反方結()"><img src="images/1m.png"width="60px"></button>
+                        </div>
+                    </section>
+                    <script>
+                    var control82 = 1;
+                    var min82 = 3;
+                    var sec82 = 00;
+                    var mytimer82;
+                    var up = document.getElementById("up");
+
+                    function start反方結() {
+                        if (control82 == 1) {
+                            mytimer82 = setInterval(myTimer82, 1000);
+                            control82--;
+                        }
+                    }
+                    function myTimer82() {
+                        sec82 -= 1;
+                        if (min82 <= 0 && sec82 <= 0){
+                            clearInterval(mytimer82);
+                            control82 = 1;
+                            min82 = 3;
+                            sec82 = 00;
+                            document.getElementById("demo82").innerHTML = "0:00";
+                            return false;
+                        }
+                        if (sec82 < 0) {
+                            min82 -= 1;
+                            sec82 = 59
+                        }
+                        if (sec82 < 10) {
+                            document.getElementById("demo82").innerHTML = min82 + ":0" + sec82 ;
+                        } 
+                        else
+                            document.getElementById("demo82").innerHTML = min82 + ":" + sec82 ;
+                        }
+                        function reset反方結() {
+                            clearInterval(mytimer82);
+                            min82 = 3;
+                            sec82 = 0;
+                            document.getElementById("demo82").innerHTML = min82 + ":0" + sec82 ;
+                            control82 = 1;
+                        }
+                        function pause反方結() {
+                            clearInterval(mytimer82);
+                            control82 = 1;
+                        }
+                        function add反方結(){
+                        clearInterval(mytimer82);
+                        control82 = 1;
+                        if (control82 == 1){
+                            var addtime82 = 0;
+                            up.play()
+                            setInterval(function() {
+                            if (addtime82 < 60) {
+                            sec82 += 1;
+                            addtime82++;
+                        if (sec82 > 59) {
+                        min82 += 1;
+                        sec82 = 0
+                        }
+                        if (sec82 < 10) {
+                            document.getElementById("demo82").innerHTML = min82 + ":0" + sec82 ;
+                        } 
+                        else
+                            document.getElementById("demo82").innerHTML = min82 + ":" + sec82 ;
+                            }       
+                            }, 30);
+                        }
+                        }
+                    </script>
+                </h1>
+                </div>
+                <div class="slide">
+                    <h1>
+                    <section id="main">
+                        <div class="spare">
+                            <head class="spare">
+                                <p style="font-size: 90px;">強制計時</p>
+                            </head>
+                        </div>
+                        <div class="innerthirty">
+                            <section id="one" class="wrapper style1">
+                                <header class="special">
+                                    <p style="font-size: 170px;" id="demo811" >30</p>
+                                </header>
+                            </section>
+                        </div>
+                        <div class="inner22">
+                            <button onclick="start斷線8()"><img src="images/play.png"width="60px" margin-left="100px;"></button>&emsp;
+                            <button onclick="pause斷線8()"><img src="images/pause.png"width="60px" margin-left="150px;"></button>&emsp;
+                            <button onclick="reset斷線8()"><img src="images/restart.png"width="60px" margin-left="200px;"></button>
+                        </div>
+                    </section>
+                    <script>
+                        var control811 = 1;
+                        var min811 = 0;
+                        var sec811 = 30;
+                        var mytimer811;
+                        function start斷線8() {
+                        if (control811 == 1) {
+                            mytimer811 = setInterval(myTimer811, 1000);
+                            control811--;
+                        }
+                        }
+    
+                        function myTimer811() {
+                            sec811 -= 1;
+                            if (min811 <= 0 && sec811 <= 0 ) {
+                                clearInterval(mytimer811);
+                                min811 = 0;
+                                sec811 = 30;
+                                control811 = 1;
+                                document.getElementById("demo811").innerHTML = "00";
+                                return false;
+                            }
+                            if (sec811 < 0) {
+                                min811 -= 1;
+                                sec811 = 59
+                            }
+                            if (sec811 < 10) {
+                                document.getElementById("demo811").innerHTML = "0" + sec811 ;
+                            } 
+                            else
+                                document.getElementById("demo811").innerHTML = sec811 ;
+                        }
+                        function reset斷線8() {
+                            clearInterval(mytimer811);
+                            min811 = 0;
+                            sec811 = 30;
+                            document.getElementById("demo811").innerHTML = sec811 ;
+                            control811 = 1;
+                        }
+    
+                        function pause斷線8() {
+                            clearInterval(mytimer811);
+                            control811 = 1;
+                        }
+                    </script>
+    
+                <!-- 反方計時器 -->
+                        <!-- Main -->
+                        <section id="main2">
+                            <div class="spare2">
+                                <head class="spare2">
+                                    <p style="font-size: 90px;">比賽暫停</p>
+                                </head>
+                            </div>
+                            <div class="innerright">
+                                <!-- One -->
+                                <section id="one" class="wrapper style1">
+                                    <header class="special">
+                                        <p style="font-size: 170px;" id="demo812" >1:00</p>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="inner2rightspare">
+                                <button onclick="start裁判8()"><img src="images/play.png"width="60px" ></button>&emsp;
+                                <button onclick="pause裁判8()"><img src="images/pause.png"width="60px"></button>&emsp;
+                                <button onclick="reset裁判8()"><img src="images/restart.png"width="60px"></button>
+                            </div>
+                        </section>
+                        <script>
+                        var control812 = 1;
+                        var min812 = 1;
+                        var sec812 = 0;
+                        var mytimer812;
+    
+                        function start裁判8() {
+                            if (control812 == 1) {
+                                mytimer812 = setInterval(myTimer812, 1000);
+                                control812--;
+                            }
+                        }
+                        function myTimer812() {
+                            sec812 -= 1;
+                            if (min812 <= 0 && sec812 <= 0 ) {
+                                clearInterval(mytimer812);
+                                min812 = 1;
+                                sec812 = 0;
+                                control812 = 1;
+                                document.getElementById("demo812").innerHTML = "0:00";
+                                return false;
+                            }
+                            if (sec812 < 0) {
+                                min812 -= 1;
+                                sec812 = 59
+                            }
+
+                            if (sec812 < 10) {
+                                document.getElementById("demo812").innerHTML = min812 + ":0" + sec812 ;
+                            } 
+                            else
+                                document.getElementById("demo812").innerHTML = min812 + ":" + sec812 ;
+                        
+                            }
+                            function reset裁判8() {
+                                clearInterval(mytimer812);
+                                min812 = 1;
+                                sec812 = 0;
+                                document.getElementById("demo812").innerHTML = min812 + ":0" + sec812 ;
+                                control812 = 1;
+                            }
+                            function pause裁判8() {
+                                clearInterval(mytimer812);
+                                control812 = 1;
                             }
                         </script>
                     </h1>
