@@ -29,11 +29,23 @@ button:active {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     margin-top: 220px;
-    margin-left: 270px;
+    margin-left: 290px;
+}
+.left7{
+    color: rgb(59, 59, 59);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 220px;
+    margin-left: 650px;
 }
 .inner{
     margin-top: -190px;
     margin-left: 200px;
+    letter-spacing: 5px;
+}
+.inner7{
+    margin-top: -190px;
+    margin-left: 570px;
     letter-spacing: 5px;
 }
 .innerthirty{
@@ -45,6 +57,10 @@ button:active {
     margin-top: -160px;
     margin-left: 160px;
 }
+.inner27{
+    margin-top: -160px;
+    margin-left: 540px;
+}
 .inner22{
     margin-top: -160px;
     margin-left: 240px;
@@ -55,7 +71,7 @@ button:active {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     margin-top: -470px;
-    margin-left: 1040px;
+    margin-left: 1100px;
 }
 .innerright{
     margin-top: -190px;
@@ -73,6 +89,25 @@ button:active {
 }
 .fp-tooltip {
     color: #000!important;
+}
+
+.left2page{
+    color: rgb(59, 59, 59);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 220px;
+    margin-left: 560px;
+}
+
+.inner2second{
+    margin-top: -190px;
+    margin-left: 640px;
+    letter-spacing: 5px;
+}
+
+.inner2button{
+    margin-top: -160px;
+    margin-left: 600px;
 }
 
 /* 斷線計時 */
@@ -127,6 +162,10 @@ button:active {
 }
 .s8{
     background-image: url("images/bg8.png");
+    background-size: cover;
+}
+.s9{
+    background-image: url("images/bg9.png");
     background-size: cover;
 }
 .home{
@@ -207,6 +246,27 @@ button:active {
     display: inline-block;
     line-height: 1em;
   }
+/* Footer */
+.footer{
+    background-color: rgb(121, 121, 121);
+    height: 60px;
+    margin-top: 60px;
+    font-size:0.9rem;
+    color: rgb(223, 223, 223);
+    line-height: 70px;
+    text-align: center;
+   }
+
+
+
+@media screen and (max-width: 736px) {
+
+    .footer {
+        height: 60px;
+        margin-top: 60px;
+        line-height: 70px;
+    }
+}
 
 
   @import url(font-awesome.min.css);
@@ -220,7 +280,6 @@ button:active {
   */
   
   /* Reset */
-  
   
       ol, ul {
           list-style: none;
@@ -1743,4 +1802,4 @@ button:active {
           }
   
       }
-  
+
